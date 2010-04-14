@@ -1,0 +1,36 @@
+
+
+<h1>New agreement</h1>
+
+<% semantic_form_for(@agreement) do |f| %>
+  <% f.inputs do %>
+    <%= f.input :legal_name, :label => 'Legal name' %>
+    <%= f.input :business_name, :label => 'Business name' %>
+    <%= f.input :short_name, :label => 'Short name' %>
+    <%= f.input :business_phone, :label => 'Business phone' %>
+    <%= f.input :physical_address, :label => 'Physical address' %>
+    <%= f.input :mailing_address, :label => 'Mailing address' %>
+    <%= f.input :city, :label => 'City' %>
+    <%= f.input :state, :label => 'State' %>
+    <%= f.input :zip, :label => 'Zip' %>
+    <%= f.input :authorized_contact, :label => 'Authorized contact' %>
+    <%= f.input :authorized_contact_cell, :label => 'Authorized contact cell' %>
+    <%= f.input :fax, :label => 'Fax' %>
+    <%= f.input :email, :label => 'Email' %>
+    <%= f.input :years_in_business, :label => 'Years in business' %>
+    <%= f.input :ein, :label => 'Ein' %>
+    <%= f.input :ownership_type, :label => 'Ownership type' %>
+    <%= f.input :num_of_blingers, :label => 'Num of blingers' %>
+    <%= f.input :name_on_account, :label => 'Name on account' %>
+    <%= f.input :bank_name, :label => 'Bank name' %>
+    <%= f.input :account_number, :label => 'Account number' %>
+    <%= f.input :new_account, :label => 'New account' %>
+    <%= f.input :printed_name, :label => 'Printed name' %>
+    <%= f.input :initials, :label => 'Initials' %>
+    <%= f.input :title, :label => 'Title' %>
+  <% end %>
+
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
