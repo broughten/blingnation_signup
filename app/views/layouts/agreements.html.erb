@@ -5,8 +5,21 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Agreements: <%= controller.action_name %></title>
-  <%= stylesheet_link_tag 'scaffold' %>
-  <%= stylesheet_link_tag 'formtastic', 'formtastic_changes', :media => 'screen' %>
+    <%# Load up the various javascript libraries from Google %>
+    <script src="http://www.google.com/jsapi"></script>
+    <script>
+      // Load jQuery
+      google.load("jquery", "1.3.2");
+  </script>
+  <%= stylesheet_link_tag 'main' %>
+  <%= stylesheet_link_tag 'formtastic', 'jquery/colorbox/colorbox', 'formtastic_changes', :media => 'screen' %>
+
+  <%= yield :head %>
+
+  
+  <script>
+    <%= yield :javascript %>
+  </script>
 </head>
 <body>
 
