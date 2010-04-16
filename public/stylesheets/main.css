@@ -68,6 +68,7 @@ a:hover { color: #fff; background-color:#000; }
 }
 
 #business-type-select {
+  float:left;
   margin-left:100px;
   margin-bottom:-10px;
   text-align: left;
@@ -108,4 +109,23 @@ a:hover { color: #fff; background-color:#000; }
 
 #cboxClose{
   display:none !important;
+}
+
+#go-button {
+  margin-top:97px;
+  float:left;
+  cursor: pointer;
+  padding: 7px 7px 7px 7px;
+  font-weight: bold;
+  margin-left:30px;
+  background-color:#00B0DB;
+}
+
+#go-button:hover {
+  background-color:#00C1F0;
+}
+
+#go-button p {
+  margin:0;
+  color:white;
 }
