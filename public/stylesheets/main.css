@@ -345,7 +345,3 @@ a:hover { color: #fff; background-color:#000; }
 #submit {
   margin-top:10px;
 }
-.pageBreak{
-    page-break-before: always;
-}
-  
