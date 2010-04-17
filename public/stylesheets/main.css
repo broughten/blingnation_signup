@@ -166,6 +166,7 @@ a:hover { color: #fff; background-color:#000; }
   margin-right:15px;
   float:left;
   margin-left:5px;
+  width:300px;
 }
 
 #contact-info {
@@ -191,14 +192,11 @@ a:hover { color: #fff; background-color:#000; }
   float:left;
 }
 
-#ownership-type {
-  padding-top:40px;
-}
-
 #ownership-type-1 p, #ownership-type-2 p, #ownership-type-1 label, #ownership-type-2 label, #ownership-type-1 input, #ownership-type-2 input  {
   float:left;
   font-size:11px;
-  margin-right:3px;
+  margin-top:0;
+  margin-bottom:0;
 }
 
 #ownership-type-1 label, #ownership-type-2 label {
