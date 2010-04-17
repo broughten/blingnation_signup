@@ -9,7 +9,7 @@
       $(document).unbind("keydown.cbox_close");
     });
     $("business_type").show();
-    if (!$("#errorExplanation")) {
+    if (!$("#errorExplanation").length) {
       $.fn.colorbox({ href:"#business_type",
                       open:true,
                       inline:true,
@@ -74,36 +74,36 @@
       <img src="images/merchant_info.png" alt="merchant info"/>
       <div id="merchant-info">
         <li id="agreement_legal_name_input" class="string required">
-          <input type="text" size="35" name="agreement[legal_name]" maxlength="128" id="agreement_legal_name"/>
+          <input type="text" size="35" name="agreement[legal_name]" maxlength="128" id="agreement_legal_name" value="<%=@agreement.legal_name%>"/>
           <label for="agreement_legal_name">Legal name</label>
         </li>
         <li id="agreement_business_name_input" class="string required">
-          <input type="text" size="35" name="agreement[business_name]" maxlength="128" id="agreement_business_name"/>
+          <input type="text" size="35" name="agreement[business_name]" maxlength="128" id="agreement_business_name" value="<%=@agreement.business_name%>"/>
           <label for="agreement_business_name">Business name</label>
         </li>
         <li id="agreement_business_phone_input" class="string required">
-          <input type="text" size="35" name="agreement[business_phone]" maxlength="32" id="agreement_business_phone"/>
+          <input type="text" size="35" name="agreement[business_phone]" maxlength="32" id="agreement_business_phone" value="<%=@agreement.business_phone%>"/>
           <label for="agreement_business_phone">Business phone</label>
         </li>
         <li id="agreement_physical_address_input" class="string required">
-          <input type="text" size="35" name="agreement[physical_address]" maxlength="128" id="agreement_physical_address"/>
+          <input type="text" size="35" name="agreement[physical_address]" maxlength="128" id="agreement_physical_address" value="<%=@agreement.physical_address%>"/>
           <label for="agreement_physical_address">Physical address</label>
         </li>
         <li id="agreement_mailing_address_input" class="string required">
-          <input type="text" size="35" name="agreement[mailing_address]" maxlength="128" id="agreement_mailing_address"/>
+          <input type="text" size="35" name="agreement[mailing_address]" maxlength="128" id="agreement_mailing_address" value="<%=@agreement.mailing_address%>"/>
           <label for="agreement_mailing_address">Mailing address</label>
         </li>
         <div id="city-state-zip">
           <li id="agreement_city_input" class="string required">
-            <input type="text" size="20" name="agreement[city]" maxlength="64" id="agreement_city"/>
+            <input type="text" size="20" name="agreement[city]" maxlength="64" id="agreement_city" value="<%=@agreement.city%>"/>
             <label for="agreement_city">City</label>
           </li>
           <li id="agreement_state_input" class="string required">
-            <input type="text" size="5" name="agreement[state]" maxlength="32" id="agreement_state"/>
+            <input type="text" size="5" name="agreement[state]" maxlength="32" id="agreement_state" value="<%=@agreement.state%>"/>
             <label for="agreement_state">State</label>
           </li>
           <li id="agreement_zip_input" class="string required">
-            <input type="text" size="6" name="agreement[zip]" maxlength="32" id="agreement_zip"/>
+            <input type="text" size="6" name="agreement[zip]" maxlength="32" id="agreement_zip" value="<%=@agreement.zip%>"/>
             <label for="agreement_zip">Zip</label>
           </li>
         </div>
@@ -111,52 +111,52 @@
       <img src="images/contact_info.png" alt="contact info"/>
       <div id="contact-info">
         <li id="agreement_authorized_contact_input" class="string required">
-          <input type="text" size="36" name="agreement[authorized_contact]" maxlength="64" id="agreement_authorized_contact"/>
+          <input type="text" size="36" name="agreement[authorized_contact]" maxlength="64" id="agreement_authorized_contact" value="<%=@agreement.authorized_contact%>"/>
           <label for="agreement_authorized_contact">Authorized contact</label>
         </li>
         <li id="agreement_authorized_contact_cell_input" class="string required">
-          <input type="text" size="36" name="agreement[authorized_contact_cell]" maxlength="32" id="agreement_authorized_contact_cell"/>
+          <input type="text" size="36" name="agreement[authorized_contact_cell]" maxlength="32" id="agreement_authorized_contact_cell" value="<%=@agreement.authorized_contact_cell%>"/>
           <label for="agreement_authorized_contact_cell">Authorized contact cell</label>
         </li>
         <li id="agreement_fax_input" class="string required">
-          <input type="text" size="36" name="agreement[fax]" maxlength="32" id="agreement_fax"/>
+          <input type="text" size="36" name="agreement[fax]" maxlength="32" id="agreement_fax" value="<%=@agreement.fax%>"/>
           <label for="agreement_fax">Fax</label>
         </li>
         <li id="agreement_email_input" class="string required">
-          <input type="text" size="36" name="agreement[email]" maxlength="128" id="agreement_email"/>
+          <input type="text" size="36" name="agreement[email]" maxlength="128" id="agreement_email" value="<%=@agreement.email%>"/>
           <label for="agreement_email">Email</label>
         </li>
         <div id="number-answers">
           <li id="agreement_years_in_business_input" class="numeric required">
-            <input type="text" size="15" name="agreement[years_in_business]" id="agreement_years_in_business"/>
+            <input type="text" size="15" name="agreement[years_in_business]" id="agreement_years_in_business" value="<%=@agreement.years_in_business%>"/>
             <label for="agreement_years_in_business">Years in busines</label>
           </li>
           <li id="agreement_ein_input" class="string required">
-            <input type="text" size="16" name="agreement[ein]" maxlength="32" id="agreement_ein"/>
+            <input type="text" size="16" name="agreement[ein]" maxlength="32" id="agreement_ein" value="<%=@agreement.ein%>"/>
             <label for="agreement_ein">Ein</label>
           </li>
         </div>
         <div id="ownership-type">
           <div id="ownership-type-1">
             <p>Ownership Type:</p>
-            <p><input type="radio" name="ownership_type" value="Sole Proprietor" checked/><label>Sole Proprietor</label></p>
-            <p><input type="radio" name="ownership_type" value="Corp" checked/><label>Corp</label></p>
+            <p><input type="radio" name="ownership_type" value="Sole Proprietor" <%= (@agreement.ownership_type == 'Sole Proprietor')?"checked":""%>/><label>Sole Proprietor</label></p>
+            <p><input type="radio" name="ownership_type" value="Corp" <%= (@agreement.ownership_type == 'Corp')?"checked":""%>/><label>Corp</label></p>
           </div>
           <div class="clear"></div>
           <div id="ownership-type-2">
-            <p><input type="radio" name="ownership_type" value="Partnership" checked/><label>Partnership</label></p>
-            <p><input type="radio" name="ownership_type" value="LLC" checked/><label>LLC</label></p>
-            <p><input type="radio" name="ownership_type" value="Other" checked/><label>Other (specify)</label></p>
+            <p><input type="radio" name="ownership_type" value="Partnership" <%= (@agreement.ownership_type == 'Partnership')?"checked":""%>/><label>Partnership</label></p>
+            <p><input type="radio" name="ownership_type" value="LLC" <%= (@agreement.ownership_type == 'LLC')?"checked":""%>/><label>LLC</label></p>
+            <p><input type="radio" name="ownership_type" value="Other" <%= (@agreement.ownership_type == 'Other')?"checked":""%>/><label>Other (specify)</label></p>
           </div>
           <li id="agreement_ownership_type_input" class="string required">
-            <input type="text" size="3" name="agreement[ownership_type]" maxlength="16" id="agreement_ownership_type"/>
+            <input type="text" size="3" name="agreement[ownership_type]" maxlength="16" id="agreement_ownership_type" value="<%=@agreement.ownership_type%>"/>
           </li>
         </div>
       </div>
     </div>
     <div id="dba-name">
       <p>System will display first 20 characters (incl. spaces) of legal name or DBA, if different, unless indicated otherwise:</p>
-      <input type="text" size="16" name="agreement[short_name]" maxlength="32" id="agreement_short_name"/>
+      <input type="text" size="16" name="agreement[short_name]" maxlength="32" id="agreement_short_name" value="<%=@agreement.short_name%>"/>
     </div>
     <div class="clear"></div>
     <div id="pricing">
@@ -164,7 +164,7 @@
         <p>Pricing Schedule & Fees</p>
         <li id="agreement_num_of_blingers_input" class="numeric required">
           <label for="agreement_num_of_blingers">Num of blingers</label>
-          <input type="text" size="4" name="agreement[num_of_blingers]" id="agreement_num_of_blingers"/>
+          <input type="text" size="4" name="agreement[num_of_blingers]" id="agreement_num_of_blingers" value="<%=@agreement.num_of_blingers%>"/>
         </li>
       </div>
       <img id="pricing-pic" src="images/grocery_pricing.png" alt="pricing"/>
@@ -176,23 +176,23 @@
       <div id="check-center-area">
         <li id="agreement_name_on_account_input" class="string required">
           <label for="agreement_name_on_account">Name on Checking Account:</label>
-          <input type="text" size="30" name="agreement[name_on_account]" maxlength="128" id="agreement_name_on_account"/>
+          <input type="text" size="30" name="agreement[name_on_account]" maxlength="128" id="agreement_name_on_account" value="<%=@agreement.name_on_account%>"/>
           <img id="check-top-right" src="images/check_top_right.png" alt=""/>
         </li>
         <img src="images/check_middle.png" alt=""/>
       </div>
       <div id="check-lower-section">
-        <input id="bank-name-input" type="text" size="31" name="agreement[bank_name]" maxlength="128" id="agreement_bank_name"/>
+        <input id="bank-name-input" type="text" size="31" name="agreement[bank_name]" maxlength="128" id="agreement_bank_name" value="<%=@agreement.bank_name%>"/>
         <img src="images/check_center.png" alt=""/>
-        <input id="acct-num-input" type="text" size="31" name="agreement[account_number]" maxlength="64" id="agreement_account_number"/>
+        <input id="acct-num-input" type="text" size="31" name="agreement[account_number]" maxlength="64" id="agreement_account_number" value="<%=@agreement.account_number%>"/>
         <img src="images/check_middle_right.png" alt=""/>
       </div>
       <img id="check_upper_bottom" src="images/check_upper_bottom.png" alt=""/>
       <div id="lower-left-bottom">
         <img id="bottom-section" src="images/check_lower_left_bottom.png" alt=""/>
-        <input type="hidden" value="0" name="agreement[new_account]"/>
+        <input type="hidden" value="0" name="agreement[new_account]" value="<%=@agreement.new_account%>"/>
         <div id="little-string">
-          <input type="checkbox" value="1" name="agreement[new_account]" id="agreement_new_account"/>
+          <input type="checkbox" value="1" name="agreement[new_account]" id="agreement_new_account" checked="<%=@agreement.new_account == true%>"/>
           <img id="check-box-bottom" src="images/check_bottom_left_right.png" alt=""/>
         </div>
         <img id="bottom-corner" src="images/check_lower_right_bottom.png" alt=""/>
@@ -202,15 +202,15 @@
     <div id="bottom">
       <img src="images/terms.png" alt=""/>
       <li id="agreement_printed_name_input" class="string required">
-        <input type="text" size="25" name="agreement[printed_name]" maxlength="64" id="agreement_printed_name"/>
+        <input type="text" size="25" name="agreement[printed_name]" maxlength="64" id="agreement_printed_name" value="<%=@agreement.printed_name%>"/>
         <label for="agreement_printed_name">Printed name</label>
       </li>
       <li id="agreement_initials_input" class="string required">
-        <input type="text" size="8" name="agreement[initials]" maxlength="8" id="agreement_initials"/>
+        <input type="text" size="8" name="agreement[initials]" maxlength="8" id="agreement_initials" value="<%=@agreement.initials%>"/>
         <label for="agreement_initials">By entering your initials <br/>above, you agree to the terms</label>
       </li>
       <li id="agreement_title_input" class="string required">
-        <input type="text" size="25" name="agreement[title]" maxlength="64" id="agreement_title"/>
+        <input type="text" size="25" name="agreement[title]" maxlength="64" id="agreement_title" value="<%=@agreement.title%>"/>
         <label for="agreement_title">Title</label>
       </li>
     </div>
