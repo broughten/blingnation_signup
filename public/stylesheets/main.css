@@ -310,10 +310,12 @@ a:hover { color: #fff; background-color:#000; }
 #little-string input,#little-string img {
   display:block;
 }
+#check-box-bottom {
+  padding-top:1px;
+}
 
 #agreement_new_account {
-  margin-left:2px;
-  margin-bottom:1px;
+  margin:0;
 }
 
 #bottom {
