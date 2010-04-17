@@ -11,8 +11,10 @@
       // Load jQuery
       google.load("jquery", "1.3.2");
   </script>
+  
   <%= stylesheet_link_tag 'main', :media => 'all' %>
   <%= stylesheet_link_tag 'formtastic', 'jquery/colorbox/colorbox', 'formtastic_changes', :media => 'all' %>
+  <!--[if IE]><%= stylesheet_link_tag 'ie.css', :media => 'screen' %><![endif]-->
 
   <%= yield :head %>
 
