@@ -315,6 +315,8 @@ a:hover { color: #fff; background-color:#000; }
 }
 
 #agreement_new_account {
+  height:13px;
+  width:13px;
   margin:0;
 }
 
