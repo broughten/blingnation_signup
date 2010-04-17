@@ -302,3 +302,31 @@ a:hover { color: #fff; background-color:#000; }
   margin-left:2px;
   margin-bottom:1px;
 }
+
+#bottom {
+  height:265px;
+  width:720px;
+  margin-top:8px;
+  border: solid 1px #dddddd;
+}
+
+
+#bottom li {
+  float:left;
+  margin-left:10px;
+  margin-right:20px;
+}
+
+#bottom input {
+  border-top:none;
+  border-left:none;
+  border-right: none;
+  height:20px;
+}
+#bottom label {
+  display:block;
+  font-size:11px;
+}
+#submit {
+  margin-top:10px;
+}

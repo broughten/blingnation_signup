@@ -182,24 +182,35 @@
         </div>
         <img id="bottom-corner" src="images/check_lower_right_bottom.png" alt=""/>
       </div>
-      
-
+    </div>
+    
+    <div id="bottom">
+      <img src="images/terms.png" alt=""/>
+      <li id="agreement_printed_name_input" class="string required">
+        <input type="text" size="25" name="agreement[printed_name]" maxlength="64" id="agreement_printed_name"/>
+        <label for="agreement_printed_name">Printed name</label>
+      </li>
+      <li id="agreement_initials_input" class="string required">
+        <input type="text" size="8" name="agreement[initials]" maxlength="8" id="agreement_initials"/>
+        <label for="agreement_initials">By entering your initials <br/>above, you agree to the terms</label>
+      </li>
+      <li id="agreement_title_input" class="string required">
+        <input type="text" size="25" name="agreement[title]" maxlength="64" id="agreement_title"/>
+        <label for="agreement_title">Title</label>
+      </li>
     </div>
 
+
     <div class="clear"></div>
-    <a class='example8' href="#">Business Type</a>
 
-        <%= f.input :printed_name, :label => 'Printed name' %>
-        <%= f.input :initials, :label => 'Initials' %>
-        <%= f.input :title, :label => 'Title' %>
       <% end %>
-
+    <div id="submit">
       <p>
         <%= f.submit 'Create' %>
       </p>
-    <% end %>
+    </div>
   </div>
-
+  <% end %>
   <!-- This contains the hidden content for inline calls -->
   <div style='display:none'>
     <div id='business_type'>
