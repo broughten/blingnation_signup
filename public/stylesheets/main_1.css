@@ -126,21 +126,6 @@ a:hover { color: #fff; background-color:#000; }
   color:white;
 }
 
-
-
-
-
-#top-box {
-  height:236px;
-  width:720px;
-  margin-top:8px;
-  border: solid 2px #dddddd;
-}
-
-#top-box img {
-  float:left;
-}
-
 #merchant-info, #contact-info {
   margin-top:5px;
   margin-right:15px;
