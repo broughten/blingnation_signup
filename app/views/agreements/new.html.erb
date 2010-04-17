@@ -6,59 +6,199 @@
   $(document).ready(function(){
 
     $(document).bind('cbox_open', function(){
-        $(document).unbind("keydown.cbox_close");
+      $(document).unbind("keydown.cbox_close");
     });
     $("business_type").show();
-    $.fn.colorbox({ href:"#business_type",
-                    open:true,
-                    inline:true,
-                    width:"570px",
-                    height:"261px",
-                    overlayClose:false
-                  });
-    $().bind('cbox_closed', function(){
+    //$.fn.colorbox({ href:"#business_type",
+    //                open:true,
+    //                inline:true,
+    //                width:"570px",
+    //                height:"261px",
+    //                overlayClose:false
+    //              });
+    $(document).bind('cbox_closed', function(){
       $('#business_type').hide();
     });
 
-
+    $("#go-button").click( function() {
+      var type = $("input[name='business_type']:checked").val();
+      $("#agreement_business_type").val(type);
+      if (type == "Restaurant") {
+        $("#pricing-pic").attr("src","images/restaurant_pricing.png");
+      } else if (type == "Retail") {
+        $("#pricing-pic").attr("src","images/retail_pricing.png");
+      } else if (type == "Fuel") {
+        $("#pricing-pic").attr("src","images/fuel_pricing.png");
+      } else if (type == "Other") {
+        $("#pricing-pic").attr("src","images/other_pricing.png");
+      } else if (type == "Grocery") {
+        $("#pricing-pic").attr("src","images/grocery_pricing.png");
+      }
+      $.fn.colorbox.close();
+    });
 
   });
 <% end %>
-<h1>New agreement</h1>
-<a class='example8' href="#">Business Type</a>
-<% semantic_form_for(@agreement) do |f| %>
-  <% f.inputs do %>
-    <%= f.input :business_type, :as => :hidden %>
-    <%= f.input :legal_name, :label => 'Legal name' %>
-    <%= f.input :business_name, :label => 'Business name' %>
-    <%= f.input :short_name, :label => 'Short name' %>
-    <%= f.input :business_phone, :label => 'Business phone' %>
-    <%= f.input :physical_address, :label => 'Physical address' %>
-    <%= f.input :mailing_address, :label => 'Mailing address' %>
-    <%= f.input :city, :label => 'City' %>
-    <%= f.input :state, :label => 'State' %>
-    <%= f.input :zip, :label => 'Zip' %>
-    <%= f.input :authorized_contact, :label => 'Authorized contact' %>
-    <%= f.input :authorized_contact_cell, :label => 'Authorized contact cell' %>
-    <%= f.input :fax, :label => 'Fax' %>
-    <%= f.input :email, :label => 'Email' %>
-    <%= f.input :years_in_business, :label => 'Years in business' %>
-    <%= f.input :ein, :label => 'Ein' %>
-    <%= f.input :ownership_type, :label => 'Ownership type' %>
-    <%= f.input :num_of_blingers, :label => 'Num of blingers' %>
-    <%= f.input :name_on_account, :label => 'Name on account' %>
-    <%= f.input :bank_name, :label => 'Bank name' %>
-    <%= f.input :account_number, :label => 'Account number' %>
-    <%= f.input :new_account, :label => 'New account' %>
-    <%= f.input :printed_name, :label => 'Printed name' %>
-    <%= f.input :initials, :label => 'Initials' %>
-    <%= f.input :title, :label => 'Title' %>
-  <% end %>
+  <div id="container">
+    <div id="top-bar">
+      <div id="logo">
+        <img src="images/bling_logo_agreement.png" alt="bling logo" width="93px" height="64px"/>
+      </div>
+      <div id="type-header">
+        <h2 id="type-header-text">Application - Other</h2>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <% semantic_form_for(@agreement) do |f| %>
+      <% f.inputs do %>
+        <%= f.input :business_type, :as => :hidden %>
 
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
-<% end %>
+
+    <div id="top-box">
+      <img src="images/merchant_info.png" alt="merchant info"/>
+      <div id="merchant-info">
+        <div id="merchant-info">
+        <li id="agreement_legal_name_input" class="string required">
+          <input type="text" size="35" name="agreement[legal_name]" maxlength="128" id="agreement_legal_name"/>
+          <label for="agreement_legal_name">Legal name</label>
+        </li>
+        <li id="agreement_business_name_input" class="string required">
+          <input type="text" size="35" name="agreement[business_name]" maxlength="128" id="agreement_business_name"/>
+          <label for="agreement_business_name">Business name</label>
+        </li>
+        <li id="agreement_business_phone_input" class="string required">
+          <input type="text" size="35" name="agreement[business_phone]" maxlength="32" id="agreement_business_phone"/>
+          <label for="agreement_business_phone">Business phone</label>
+        </li>
+        <li id="agreement_physical_address_input" class="string required">
+          <input type="text" size="35" name="agreement[physical_address]" maxlength="128" id="agreement_physical_address"/>
+          <label for="agreement_physical_address">Physical address</label>
+        </li>
+        <li id="agreement_mailing_address_input" class="string required">
+          <input type="text" size="35" name="agreement[mailing_address]" maxlength="128" id="agreement_mailing_address"/>
+          <label for="agreement_mailing_address">Mailing address</label>
+        </li>
+        <div id="city-state-zip">
+          <li id="agreement_city_input" class="string required">
+            <input type="text" size="20" name="agreement[city]" maxlength="64" id="agreement_city"/>
+            <label for="agreement_city">City</label>
+          </li>
+          <li id="agreement_state_input" class="string required">
+            <input type="text" size="5" name="agreement[state]" maxlength="32" id="agreement_state"/>
+            <label for="agreement_state">State</label>
+          </li>
+          <li id="agreement_zip_input" class="string required">
+            <input type="text" size="6" name="agreement[zip]" maxlength="32" id="agreement_zip"/>
+            <label for="agreement_zip">Zip</label>
+          </li>
+        </div>
+      </div>
+      </div>
+      <img src="images/contact_info.png" alt="contact info"/>
+      <div id="contact-info">
+        <li id="agreement_authorized_contact_input" class="string required">
+          <input type="text" size="37" name="agreement[authorized_contact]" maxlength="64" id="agreement_authorized_contact"/>
+          <label for="agreement_authorized_contact">Authorized contact</label>
+        </li>
+        <li id="agreement_authorized_contact_cell_input" class="string required">
+          <input type="text" size="37" name="agreement[authorized_contact_cell]" maxlength="32" id="agreement_authorized_contact_cell"/>
+          <label for="agreement_authorized_contact_cell">Authorized contact cell</label>
+        </li>
+        <li id="agreement_fax_input" class="string required">
+          <input type="text" size="37" name="agreement[fax]" maxlength="32" id="agreement_fax"/>
+          <label for="agreement_fax">Fax</label>
+        </li>
+        <li id="agreement_email_input" class="string required">
+          <input type="text" size="37" name="agreement[email]" maxlength="128" id="agreement_email"/>
+          <label for="agreement_email">Email</label>
+        </li>
+        <div id="number-answers">
+          <li id="agreement_years_in_business_input" class="numeric required">
+            <input type="text" size="15" name="agreement[years_in_business]" id="agreement_years_in_business"/>
+            <label for="agreement_years_in_business">Years in busines</label>
+          </li>
+          <li id="agreement_ein_input" class="string required">
+            <input type="text" size="16" name="agreement[ein]" maxlength="32" id="agreement_ein"/>
+            <label for="agreement_ein">Ein</label>
+          </li>
+        </div>
+        <div id="ownership-type">
+          <div id="ownership-type-1">
+            <p>Ownership Type:</p>
+            <p><input type="radio" name="ownership_type" value="Sole Proprietor" checked/><label>Sole Proprietor</label></p>
+            <p><input type="radio" name="ownership_type" value="Corp" checked/><label>Corp</label></p>
+          </div>
+          <div id="ownership-type-2">
+            <p><input type="radio" name="ownership_type" value="Partnership" checked/><label>Partnership</label></p>
+            <p><input type="radio" name="ownership_type" value="LLC" checked/><label>LLC</label></p>
+            <p><input type="radio" name="ownership_type" value="Other" checked/><label>Other (specify)</label></p>
+          </div>
+          <li id="agreement_ownership_type_input" class="string required">
+            <input type="text" size="6" name="agreement[ownership_type]" maxlength="16" id="agreement_ownership_type"/>
+          </li>
+        </div>
+      </div>
+    </div>
+    <div id="dba-name">
+      <p>System will display first 20 characters (incl. spaces) of legal name or DBA, if different, unless indicated otherwise:</p>
+      <input type="text" size="17" name="agreement[short_name]" maxlength="32" id="agreement_short_name"/>
+    </div>
+    <div class="clear"></div>
+    <div id="pricing">
+      <div id="pricing-top">
+        <p>Pricing Schedule & Fees</p>
+        <li id="agreement_num_of_blingers_input" class="numeric required">
+          <label for="agreement_num_of_blingers">Num of blingers</label>
+          <input type="text" size="4" name="agreement[num_of_blingers]" id="agreement_num_of_blingers"/>
+        </li>
+      </div>
+      <img id="pricing-pic" src="images/grocery_pricing.png" alt="pricing"/>
+    </div>
+
+    <div id="check">
+      <img src="images/check_top.png" alt=""/>
+      <img id="check-left" src="images/check_left.png" alt=""/>
+      <div id="check-center-area">
+        <li id="agreement_name_on_account_input" class="string required">
+          <label for="agreement_name_on_account">Name on Checking Account:</label>
+          <input type="text" size="50" name="agreement[name_on_account]" maxlength="128" id="agreement_name_on_account"/>
+          <img id="check-top-right" src="images/check_top_right.png" alt=""/>
+         </li>
+        <img src="images/check_middle.png" alt=""/>
+      </div>
+      <div id="check-lower-section">
+        <input type="text" size="31" name="agreement[bank_name]" maxlength="128" id="agreement_bank_name"/>
+        <img src="images/check_center.png" alt=""/>
+        <input id="acct-num-input" type="text" size="31" name="agreement[account_number]" maxlength="64" id="agreement_account_number"/>
+        <img src="images/check_middle_right.png" alt=""/>
+      </div>
+      <img id="check_upper_bottom" src="images/check_upper_bottom.png" alt=""/>
+      <div id="lower-left-bottom">
+        <img id="bottom-section" src="images/check_lower_left_bottom.png" alt=""/>
+        <input type="hidden" value="0" name="agreement[new_account]"/>
+        <div id="little-string">
+          <input type="checkbox" value="1" name="agreement[new_account]" id="agreement_new_account"/>
+          <img src="images/check_bottom_left_right.png" alt=""/>
+        </div>
+        <img id="bottom-corner" src="images/check_lower_right_bottom.png" alt=""/>
+      </div>
+      
+
+    </div>
+
+    <div class="clear"></div>
+    <a class='example8' href="#">Business Type</a>
+
+        <%= f.input :printed_name, :label => 'Printed name' %>
+        <%= f.input :initials, :label => 'Initials' %>
+        <%= f.input :title, :label => 'Title' %>
+      <% end %>
+
+      <p>
+        <%= f.submit 'Create' %>
+      </p>
+    <% end %>
+  </div>
 
   <!-- This contains the hidden content for inline calls -->
   <div style='display:none'>
@@ -73,11 +213,11 @@
       </div>
       <div id="business-type-select">
         <p>What kind of business do you have?</p>
-        <p><input type="radio" id="retail-button" name="business_type" value="Retail" checked> Retail</p>
-        <p><input type="radio" id="restauran-button" name="business_type" value="Restaurant" checked> Restaurant</p>
-        <p><input type="radio" id="fuel-button" name="business_type" value="Fuel" checked> Fuel</p>
-        <p><input type="radio" id="grocery-button" name="business_type" value="Grocery" checked> Grocery</p>
-        <p><input type="radio" id="other-button" name="business_type" value="Other" checked> Other</p>
+        <p><input type="radio" id="retail-button" name="business_type" value="Retail" checked/> Retail</p>
+        <p><input type="radio" id="restauran-button" name="business_type" value="Restaurant" checked/> Restaurant</p>
+        <p><input type="radio" id="fuel-button" name="business_type" value="Fuel" checked/> Fuel</p>
+        <p><input type="radio" id="grocery-button" name="business_type" value="Grocery" checked/> Grocery</p>
+        <p><input type="radio" id="other-button" name="business_type" value="Other" checked/> Other</p>
       </div>
       <div id="go-button">
         <p>Signup</p>
