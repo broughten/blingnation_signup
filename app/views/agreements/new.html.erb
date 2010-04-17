@@ -43,6 +43,14 @@
       $.fn.colorbox.close();
     });
 
+    $("#agreement_submit").click( function() {
+      var type = $("input[name='ownership_type']:checked").val();
+      if ($("#agreement_ownership_type").val() == '') {
+        $("#agreement_ownership_type").val(type);
+      }
+      return true;
+    });
+
   });
 <% end %>
   <div id="container">
@@ -55,9 +63,9 @@
       </div>
     </div>
     <div class="clear"></div>
-    <% semantic_form_for(@agreement) do |f| %>
-      <% f.inputs do %>
-        <%= f.input :business_type, :as => :hidden %>
+    <% form_for(@agreement) do |f| %>
+      <%= f.error_messages %>
+      <input type="hidden" name="agreement[business_type]" id="agreement_business_type"/>
 
 
     <div id="top-box">
@@ -204,11 +212,7 @@
         <label for="agreement_title">Title</label>
       </li>
     </div>
-
-
     <div class="clear"></div>
-
-      <% end %>
     <div id="submit">
       <p>
         <%= f.submit 'Create' %>
@@ -221,7 +225,7 @@
     <div id='business_type'>
       <ul id="popup-header">
         <li><h1>Bling Nation Merchant Signup</h1></li>
-        <li><img src="images/bling_logo.gif" alt="logo"</li>
+        <li><img src="images/bling_logo.gif" alt="logo"</img></li>
       </ul>
       <div class="clear"></div>
       <div id="touts">
@@ -238,4 +242,5 @@
       <div id="go-button">
         <p>Signup</p>
       </div>
+    </div>
   </div>

@@ -1,5 +1,5 @@
 class Agreement < ActiveRecord::Base
-  validates_format_of       :email, :with => /.*@.*/, :message => 'email is invalid'
+  validates_format_of       :email, :with => /.*@.*/, :message => 'is invalid'
   validates_presence_of     :business_name
   validates_presence_of     :business_phone
   validates_presence_of     :physical_address
