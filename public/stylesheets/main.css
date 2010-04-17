@@ -206,6 +206,7 @@ a:hover { color: #fff; background-color:#000; }
 }
 
 #agreement_ownership_type_input input {
+  float:left;
   height:15px;
 }
 
