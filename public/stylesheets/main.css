@@ -205,9 +205,12 @@ a:hover { color: #fff; background-color:#000; }
   padding-top:2px;
 }
 
-#agreement_ownership_type_input input {
+#agreement_ownership_type_input {
   float:left;
-  height:15px;
+}
+
+#agreement_ownership_type_input input {
+  height:20px;
 }
 
 #dba-name p {
