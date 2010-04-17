@@ -9,13 +9,13 @@
       $(document).unbind("keydown.cbox_close");
     });
     $("business_type").show();
-    //$.fn.colorbox({ href:"#business_type",
-    //                open:true,
-    //                inline:true,
-    //                width:"570px",
-    //                height:"261px",
-    //                overlayClose:false
-    //              });
+    $.fn.colorbox({ href:"#business_type",
+                    open:true,
+                    inline:true,
+                    width:"570px",
+                    height:"261px",
+                    overlayClose:false
+                  });
     $(document).bind('cbox_closed', function(){
       $('#business_type').hide();
     });
@@ -25,14 +25,20 @@
       $("#agreement_business_type").val(type);
       if (type == "Restaurant") {
         $("#pricing-pic").attr("src","images/restaurant_pricing.png");
+        $("#type-header-text").text("Application - Restaurant");
       } else if (type == "Retail") {
         $("#pricing-pic").attr("src","images/retail_pricing.png");
+        $("#type-header-text").text("Application - Retail");
       } else if (type == "Fuel") {
         $("#pricing-pic").attr("src","images/fuel_pricing.png");
+        $("#type-header-text").text("Application - Fuel");
       } else if (type == "Other") {
         $("#pricing-pic").attr("src","images/other_pricing.png");
+        $("#type-header-text").text("Application - Other");
       } else if (type == "Grocery") {
         $("#pricing-pic").attr("src","images/grocery_pricing.png");
+        $("#type-header-text").text("Application - Grocery");
+
       }
       $.fn.colorbox.close();
     });

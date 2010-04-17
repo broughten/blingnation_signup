@@ -12,7 +12,19 @@
       <img src="https://blingnation-signup.heroku.com/images/bling_logo_agreement.png" alt="bling logo" width="93px" height="64px"/>
     </div>
     <div id="type-header" style="text-align: right;float:left;width:631px;margin-top:15px;border-bottom: solid 4px #dddddd;">
-      <h2 id="type-header-text">Application - Other</h2>
+      <h2 id="type-header-text">
+        <% if @agreement.business_type == "Restaurant" %>
+         Application - Restaurant
+         <% elsif @agreement.business_type == "Retail" %>
+         Application - Retail
+         <% elsif @agreement.business_type == "Fuel" %>
+         Application - Fuel
+         <% elsif @agreement.business_type == "Grocery" %>
+         Application - Grocery
+         <% elsif @agreement.business_type == "Other" %>
+         Application - Other
+         <%  end %>
+      </h2>
     </div>
   </div>
   <div style="clear:both"></div>
@@ -101,7 +113,19 @@
         <p style="float:left;margin-right:5px;border-bottom:solid 1px #cccccc;"><%= @agreement.num_of_blingers %></p>
       </div>
     </div>
-    <img id="pricing-pic" src="https://blingnation-signup.heroku.com/images/grocery_pricing.png" alt="pricing"/>
+    <img id="pricing-pic" src="
+         <% if @agreement.business_type == "Restaurant" %>
+         http://blingnation-signup/images/restaurant_pricing.png
+         <% elsif @agreement.business_type == "Retail" %>
+         http://blingnation-signup/images/restaurant_pricing.png
+         <% elsif @agreement.business_type == "Fuel" %>
+         http://blingnation-signup/images/restaurant_pricing.png
+         <% elsif @agreement.business_type == "Grocery" %>
+         http://blingnation-signup/images/restaurant_pricing.png
+         <% elsif @agreement.business_type == "Other" %>
+         http://blingnation-signup/images/restaurant_pricing.png
+         <%  end %>
+         " alt="pricing"/>
   </div>
   <div style="clear:both"></div>
   <div id="check" style="margin:0">
