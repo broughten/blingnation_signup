@@ -252,7 +252,12 @@ a:hover { color: #fff; background-color:#000; }
   margin-left: 1px;
 }
 
-#agreement_name_on_account_input {
+#check-center-area {
+  width:100%;
+}
+
+#agreement_name_on_account_input label {
+  padding-top:15px;
   padding-left:5px;
   float:left;
 }
@@ -267,7 +272,7 @@ a:hover { color: #fff; background-color:#000; }
 
 #check-top-right {
   float:right;
-  margin-left:26px;
+  margin-right:2px;
 }
 
 #check-lower-section input {
@@ -284,6 +289,10 @@ a:hover { color: #fff; background-color:#000; }
 
 #acct-num-input {
   width:251px;
+}
+
+#bank-name-input {
+  width:255px;
 }
 
 #bottom-section {
