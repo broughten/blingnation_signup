@@ -25,33 +25,33 @@
           <p style="display:block;font-size:11px;">Legal name</p>
         </div>
         <div id="agreement_business_name_input" class="string required">
-          <p style="border-bottom:solid 1px #cccccc;"><%= @agreement.business_name %></p>
-          <p style="display:block;font-size:11px;">Business name</p>
+          <p style="margin:0;border-bottom:solid 1px #cccccc;"><%= @agreement.business_name %></p>
+          <p style="margin:0;display:block;font-size:11px;">Business name</p>
         </div>
         <div id="agreement_business_phone_input" class="string required">
-          <p style="border-bottom:solid 1px #cccccc;"><%= @agreement.business_phone %></p>
-          <p style="display:block;font-size:11px;">Business phone</p>
+          <p style="margin:0;border-bottom:solid 1px #cccccc;"><%= @agreement.business_phone %></p>
+          <p style="margin:0;display:block;font-size:11px;">Business phone</p>
         </div>
         <div id="agreement_physical_address_input" class="string required">
-          <p style="border-bottom:solid 1px #cccccc;"><%= @agreement.physical_address %></p>
-          <p style="display:block;font-size:11px;">Physical address</p>
+          <p style="margin:0;border-bottom:solid 1px #cccccc;"><%= @agreement.physical_address %></p>
+          <p style="margin:0;display:block;font-size:11px;">Physical address</p>
         </div>
         <div id="agreement_mailing_address_input" class="string required">
-          <p style="border-bottom:solid 1px #cccccc;"><%= @agreement.mailing_address %></p>
-          <p style="display:block;font-size:11px;">Mailing address</p>
+          <p style="margin:0;border-bottom:solid 1px #cccccc;"><%= @agreement.mailing_address %></p>
+          <p style="margin:0;display:block;font-size:11px;">Mailing address</p>
         </div>
         <div id="city-state-zip">
           <div style="float:left;" id="agreement_city_input" class="string required">
-            <p style="border-bottom:solid 1px #cccccc;"><%= @agreement.city %></p>
-            <p style="display:block;font-size:11px;">City</p>
+            <p style="margin:0;border-bottom:solid 1px #cccccc;"><%= @agreement.city %></p>
+            <p style="margin:0;display:block;font-size:11px;">City</p>
           </div>
           <div style="float:left;" id="agreement_state_input" class="string required">
-            <p style="border-bottom:solid 1px #cccccc;"><%= @agreement.state %></p>
-            <p style="display:block;font-size:11px;">State</p>
+            <p style="margin:0;border-bottom:solid 1px #cccccc;"><%= @agreement.state %></p>
+            <p style="margin:0;display:block;font-size:11px;">State</p>
           </div>
           <div style="float:left;" id="agreement_zip_input" class="string required">
-            <p style="border-bottom:solid 1px #cccccc;"><%= @agreement.zip %></p>
-            <p style="display:block;font-size:11px;">Zip</p>
+            <p style="margin:0;border-bottom:solid 1px #cccccc;"><%= @agreement.zip %></p>
+            <p style="margin:0;display:block;font-size:11px;">Zip</p>
           </div>
         </div>
       </div>
@@ -93,7 +93,7 @@
       <p style="padding-top:5px;float:left;font-size: 10px;font-style: italic;">System will display first 20 characters (incl. spaces) of legal name or DBA, if different, unless indicated otherwise:</p>
       <p style="float:left;border-bottom:solid 1px #cccccc;"><%= @agreement.short_name %></p>
     </div>
-    <div class="clear"></div>
+    <div style="clear:both"></div>
     <div id="pricing" style="margin-top:3px;margin-bottom:10px;border:solid 2px #cccccc;">
       <div id="pricing-top">
         <p style="padding-top:3px;font-weight: bold;float:left;">Pricing Schedule & Fees</p>
@@ -148,7 +148,6 @@
         <p style="display:block;font-size:11px;">Title</p>
       </div>
     </div>
-    <div class="clear"></div>
   </div>
 </body>
 </html>
