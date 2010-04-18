@@ -1,5 +1,7 @@
 class AgreementsController < ApplicationController
   
+  before_filter :authenticate, :only => [:index]
+
   # GET /agreements
   def index
     @agreements = Agreement.find(:all)
@@ -26,5 +28,6 @@ class AgreementsController < ApplicationController
     end
 
   end
+
 
 end

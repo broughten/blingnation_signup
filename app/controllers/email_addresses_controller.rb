@@ -1,5 +1,8 @@
 class EmailAddressesController < ApplicationController
-  # GET /email_addresses
+
+  before_filter :authenticate
+
+# GET /email_addresses
   # GET /email_addresses.xml
   def index
     @email_addresses = EmailAddress.all

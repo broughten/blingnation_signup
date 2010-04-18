@@ -1,7 +1,8 @@
 <h1>Listing agreements</h1>
 
-<table>
-  <tr>
+<table id="main-table">
+  <tr class="table-top">
+    <td>Date</td>
     <td>Legal name</td>
     <td>Business name</td>
     <td>Short name</td>
@@ -29,6 +30,7 @@
   </tr>
 <% @agreements.each do |agreement| %>
   <tr>
+    <td><%= agreement.created_at.strftime('%m/%d/%Y') %></td>
     <td><%= agreement.legal_name %></td>
     <td><%= agreement.business_name %></td>
     <td><%= agreement.short_name %></td>

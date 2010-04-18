@@ -347,3 +347,14 @@ a:hover { color: #fff; background-color:#000; }
 #submit {
   margin-top:10px;
 }
+
+#main-table tr td {
+  background-color: #eeeeee;
+  font-size:10px;
+  padding-right:3px;
+  padding-left:3px;
+}
+
+.table-top {
+  font-weight: bold;
+}
