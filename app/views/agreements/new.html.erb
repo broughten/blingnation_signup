@@ -67,7 +67,7 @@
     <div class="clear"></div>
     <% form_for(@agreement) do |f| %>
       <%= f.error_messages %>
-      <input type="hidden" name="agreement[business_type]" id="agreement_business_type"/>
+      <input type="hidden" name="agreement[business_type]" id="agreement_business_type" value="<%=@agreement.business_type%>"/>
 
 
     <div id="top-box">
