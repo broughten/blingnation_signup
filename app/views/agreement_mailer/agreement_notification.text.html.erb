@@ -30,7 +30,7 @@
   <div style="clear:both"></div>
   <div id="top-box" style="height:236px;width:720px;margin-top:8px;border: solid 2px #dddddd;">
     <img style="float:left" src="https://blingnation-signup.heroku.com/images/merchant_info.png" alt="merchant info"/>
-    <div id="merchant-info" style="width:250px;margin-top:5px;margin-right:15px;float:left;margin-left:5px;">
+    <div id="merchant-info" style="width:300px;margin-top:5px;margin-right:15px;float:left;margin-left:5px;">
       <div id="agreement_legal_name_input" class="string required">
         <p style="padding-top:10px;margin:0;border-bottom:solid 1px #cccccc;"><%= @agreement.legal_name %></p>
         <p style="margin:0;display:block;font-size:11px;">Legal name</p>
@@ -67,7 +67,7 @@
       </div>
     </div>
     <img style="float:left;" src="https://blingnation-signup.heroku.com/images/contact_info.png" alt="contact info"/>
-    <div id="contact-info"  style="margin-top:10px;margin-right:15px;float:left;margin-left:5px;">
+    <div id="contact-info"  style="width:300px;margin-top:10px;margin-right:15px;float:left;margin-left:5px;">
       <div id="agreement_authorized_contact_input" class="string required">
         <p style="padding-top:10px;margin:0;border-bottom:solid 1px #cccccc;"><%= @agreement.authorized_contact %></p>
         <p style="margin:0;display:block;font-size:11px;">Authorized contact</p>
@@ -94,9 +94,10 @@
           <p style="margin:0;display:block;font-size:11px;">Ein</p>
         </div>
       </div>
-      <div id="ownership-type">
-        <p style="border-bottom:solid 1px #cccccc;"><%= @agreement.ownership_type %></p>
-        <p style="display:block;font-size:11px;">Ownership Type:</p>
+      <div style="clear:both"></div>
+      <div id="agreement_email_input" class="string required">
+        <p style="padding-top:10px;margin:0;border-bottom:solid 1px #cccccc;"><%= @agreement.ownership_type %></p>
+        <p style="margin:0;display:block;font-size:11px;">Ownership Type</p>
       </div>
     </div>
   </div>
