@@ -2,6 +2,7 @@ class AgreementMailer < ActionMailer::Base
 
   def agreement_notification(agreement)
     email_addresses = Agreement.connection.select_values('select email_address from email_addresses')
+    email_addresses.push agreement.email_address
     recipients email_addresses
     from "no_reply@blingnation.com"
     subject "New merchant signup #{agreement.legal_name}"
