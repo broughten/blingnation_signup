@@ -13,11 +13,10 @@ class AgreementsController < ApplicationController
   # POST /agreements
   def create
     @agreement = Agreement.new(params[:agreement])
-    logger.debug("HI JC!!! do we get this far?")
     respond_to do |format|
       if (@agreement.save)
-        flash[:notice] = 'Agreement was successfully created.'
-        format.html { redirect_to agreements_path }
+        AgreementMailer.deliver_agreement_notification(@agreement)
+        format.html { redirect_to @agreement }
       else
         format.html do
           flash[:error] = 'Agreement was invalid. Please try again.'
