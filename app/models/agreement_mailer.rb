@@ -4,7 +4,7 @@ class AgreementMailer < ActionMailer::Base
     email_addresses = Agreement.connection.select_values('select email_address from email_addresses')
     email_addresses.push agreement.email
     recipients email_addresses
-    from "no_reply@blingnation.com"
+    from "membership@blingnation.biz"
     subject "New merchant signup #{agreement.legal_name}"
     sent_on Time.now
     body({:agreement => agreement})

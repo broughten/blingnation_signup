@@ -14,7 +14,6 @@
                       open:true,
                       inline:true,
                       width:"570px",
-                      height:"261px",
                       overlayClose:false
                     });
     }
@@ -23,7 +22,7 @@
     });
 
     $("#go-button").click( function() {
-      var type = $("input[name='business_type']:checked").val();
+      var type = $("#business-type-drop-down").val();
       $("#agreement_business_type").val(type);
       if (type == "Restaurant") {
         $("#pricing-pic").attr("src","images/restaurant_pricing.png");
@@ -40,8 +39,14 @@
       } else if (type == "Grocery") {
         $("#pricing-pic").attr("src","images/grocery_pricing.png");
         $("#type-header-text").text("Application - Grocery");
-
       }
+      var bank = $("#bank_bank_id").val();
+      if (bank == '') {
+        $("#bank-name-input").val("My bank is not listed here");
+      } else {
+        $("#bank-name-input").val(bank);
+      }
+
       $.fn.colorbox.close();
     });
 
@@ -231,15 +236,28 @@
       </ul>
       <div class="clear"></div>
       <div id="touts">
-        <p>You really want to do this! More enticing text.</p>
+        <p>Bling Nation's Community Payment Service is fast, secure and less costly than
+          accepting credit or debit cards at the point of purchase and it keeps funds in the
+          local community.  It also includes a customized loyalty programs to attract and retain
+          new and existing shoppers.   To sign up for a Bling Nation merchant account with one
+          of our member banks, please indicate your bank and merchant type below:
+        </p>
       </div>
       <div id="business-type-select">
+        <div id="business-type">
         <p>What kind of business do you have?</p>
-        <p><input type="radio" id="retail-button" name="business_type" value="Retail" checked/> Retail</p>
-        <p><input type="radio" id="restauran-button" name="business_type" value="Restaurant" checked/> Restaurant</p>
-        <p><input type="radio" id="fuel-button" name="business_type" value="Fuel" checked/> Fuel</p>
-        <p><input type="radio" id="grocery-button" name="business_type" value="Grocery" checked/> Grocery</p>
-        <p><input type="radio" id="other-button" name="business_type" value="Other" checked/> Other</p>
+          <select id="business-type-drop-down">
+            <option value="Retail"/>Retail</option>
+            <option value="Restaurant"/>Restaurant</option>
+            <option value="Fuel"/>Fuel</option>
+            <option value="Grocery"/>Grocery</option>
+            <option value="Other"/>Other</option>
+          </select>
+        </div>
+        <div id="bank">
+          <p>Which Community Bank do you bank with?</p>
+          <%= collection_select :bank, :bank_id, @banks, :id, :to_s, {:prompt => 'My bank is not listed here'} %>
+        </div>
       </div>
       <div id="go-button">
         <p>Signup</p>

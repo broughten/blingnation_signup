@@ -10,6 +10,7 @@ class AgreementsController < ApplicationController
   # GET /agreements/new
   def new
     @agreement = Agreement.new
+    @banks = Bank.find(:all)
   end
 
   # POST /agreements

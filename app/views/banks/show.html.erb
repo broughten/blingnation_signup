@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%=h @bank.name %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%=h @bank.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%=h @bank.state %>
+</p>
+
+
+<%= link_to 'Edit', edit_bank_path(@bank) %> |
+<%= link_to 'Back', banks_path %>

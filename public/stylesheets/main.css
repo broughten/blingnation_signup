@@ -8,7 +8,6 @@ body {
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size:   13px;
-  line-height: 12px;
 }
 
 h1 {
@@ -67,21 +66,27 @@ a:hover { color: #fff; background-color:#000; }
   
 }
 
+
+
 #business-type-select {
   float:left;
-  margin-left:100px;
-  margin-bottom:-10px;
+  margin-left:70px;
   text-align: left;
   background-color:#eeeeee;
-  width:268px;
+  width:300px;
+  height:110px;
   padding-top:5px;
   padding-left:5px;
-  padding-bottom:5px;
+  padding-bottom:10px;
 }
 
 #business-type-select p {
   margin-top:3px;
-  margin-bottom:3px;
+  margin-bottom:10px;
+}
+
+#bank {
+  margin-top:15px;
 }
 
 #business_type {
@@ -100,7 +105,8 @@ a:hover { color: #fff; background-color:#000; }
 #touts {
   text-align:left;
   margin-left: 40px;
-  margin-bottom:10px;
+  margin-bottom:25px;
+  padding-right:40px;
 }
 
 #touts p {
@@ -112,7 +118,7 @@ a:hover { color: #fff; background-color:#000; }
 }
 
 #go-button {
-  margin-top:97px;
+  margin-top:95px;
   float:left;
   cursor: pointer;
   padding: 7px 7px 7px 7px;
