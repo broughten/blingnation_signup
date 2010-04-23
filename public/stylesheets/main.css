@@ -6,7 +6,7 @@ body {
 }
 
 body, p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
+  font-family: arial, helvetica, sans-serif;
   font-size:   13px;
 }
 
@@ -118,7 +118,7 @@ a:hover { color: #fff; background-color:#000; }
 }
 
 #go-button {
-  margin-top:95px;
+  margin-top:135px;
   float:left;
   cursor: pointer;
   padding: 7px 7px 7px 7px;
@@ -239,12 +239,15 @@ a:hover { color: #fff; background-color:#000; }
   margin-top:3px;
   margin-bottom:10px;
   border:solid 2px #cccccc;
+  height:114px;
 }
 
 #pricing-top p {
   padding-top:3px;
+  padding-left:10px;
   font-weight: bold;
   float:left;
+  margin:0;
 }
 #pricing-top input {
   margin-right:5px;
@@ -440,4 +443,43 @@ a:hover { color: #fff; background-color:#000; }
 
 #signups a {
   color:#00B0DB;
+}
+
+#signups-header h1 {
+  float:left;
+}
+
+#signups-header img {
+  float:right;
+  padding-top:5px;
+}
+
+
+#pricing-left {
+  float:left;
+  height:94px;
+  width:306px;
+}
+#monthly-pricing {
+  float:left;
+  width:222px;
+  height:94px;
+  margin-left:10px;
+  margin-top:10px;
+}
+
+#monthly-pricing p {
+  font-family: "Arial Narrow";
+  margin:0;
+}
+#headline {
+  font-size:14px;
+}
+
+#small-print {
+  font-style: italic;
+}
+#pricing-pic {
+  float:right;
+  height:94px;
 }

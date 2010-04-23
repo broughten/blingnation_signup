@@ -114,7 +114,21 @@
         <p style="float:left;margin-right:5px;border-bottom:solid 1px #cccccc;"><%= @agreement.num_of_blingers %></p>
       </div>
     </div>
-    <img id="pricing-pic" src="
+    <div class="clear"></div>
+    <div id ="pricing-tryptic">
+      <img id ="pricing-left" src="images/pricing_left.png" alt="" style="float:left;height:94px;width:306px;"/>
+      <div id="monthly-pricing" style="float:left;width:222px;height:94px;margin-left:10px;margin-top:10px;">
+        <p id="headline" style="font-family: 'Arial Narrow';margin:0;font-size:14px;">
+          Participation Fee: $40 per Blinger
+        </p>
+        <p id="parenthetical" style="font-family: 'Arial Narrow';margin:0;">
+          (waived for first 6 mos. after Effective Date)
+        </p>
+        <p id="small-print" style="font-family: 'Arial Narrow';margin:0;font-style: italic;">
+          Includes Blinger usage fees, including data and connectivity across to configurable merchant rewards programs, and training
+        </p>
+      </div>
+      <img style="float:right;height:94px;" id="pricing-pic" src="
          <% if @agreement.business_type == "Restaurant" %>
          https://blingmerchantsignup.com/images/restaurant_pricing.png
          <% elsif @agreement.business_type == "Retail" %>
@@ -127,6 +141,7 @@
          https://blingmerchantsignup.com/images/other_pricing.png
          <%  end %>
          " alt="pricing"/>
+    </div>
   </div>
   <div style="clear:both"></div>
   <div id="check" style="margin:0">

@@ -7,3 +7,11 @@
   height:8px;
   width:8px;
 }
+
+#monthly-pricing p {
+  font-size:11px;
+}
+
+#top-box {
+  margin-top:10px;
+}
