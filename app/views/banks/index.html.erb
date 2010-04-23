@@ -1,10 +1,11 @@
 <h1>Listing banks</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>City</th>
-    <th>State</th>
+<table id="bank-table">
+  <tr class="table-top">
+    <td>Name</td>
+    <td>City</td>
+    <td>State</td>
+    <td colspan="3">Manage</td>
   </tr>
 
 <% @banks.each do |bank| %>
@@ -14,7 +15,7 @@
     <td><%=h bank.state %></td>
     <td><%= link_to 'Show', bank %></td>
     <td><%= link_to 'Edit', edit_bank_path(bank) %></td>
-    <td><%= link_to 'Destroy', bank, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Delete', bank, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

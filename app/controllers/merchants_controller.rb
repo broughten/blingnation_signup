@@ -1,9 +1,10 @@
 class MerchantsController < ApplicationController
+  before_filter :authenticate
+
   # GET /merchants
   # GET /merchants.xml
   def index
-    @merchants = Merchant.all
-
+    @merchants = Merchant.find(:all, :order => "bank_id")
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @merchants }
@@ -24,6 +25,7 @@ class MerchantsController < ApplicationController
   # GET /merchants/new
   # GET /merchants/new.xml
   def new
+    @banks = Bank.all
     @merchant = Merchant.new
 
     respond_to do |format|
@@ -34,6 +36,7 @@ class MerchantsController < ApplicationController
 
   # GET /merchants/1/edit
   def edit
+    @banks = Bank.all
     @merchant = Merchant.find(params[:id])
   end
 

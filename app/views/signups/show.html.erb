@@ -1,0 +1,8 @@
+<h1>Merchants Signups</h1>
+<p>These merchants have already signed up with Bling Nation using <%= @bank.name %> in <%= @bank.city %></p>
+
+<% @bank.merchants.each do |merchant| %>
+  <ul>
+    <li><%= merchant.name  %></li>
+  </ul>
+<% end %>

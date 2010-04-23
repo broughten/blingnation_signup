@@ -22,6 +22,7 @@ class AgreementsController < ApplicationController
         format.html { redirect_to @agreement }
       else
         format.html do
+          @banks = Bank.find(:all)
           flash[:error] = 'Agreement was invalid. Please try again.'
           render :action => "new"
         end

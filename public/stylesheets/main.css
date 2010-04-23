@@ -70,11 +70,11 @@ a:hover { color: #fff; background-color:#000; }
 
 #business-type-select {
   float:left;
-  margin-left:70px;
+  margin-left:50px;
   text-align: left;
   background-color:#eeeeee;
-  width:300px;
-  height:110px;
+  width:320px;
+  height:150px;
   padding-top:5px;
   padding-left:5px;
   padding-bottom:10px;
@@ -183,11 +183,12 @@ a:hover { color: #fff; background-color:#000; }
   border-top:none;
   border-left:none;
   border-right: none;
-  height:20px;
+  height:18px;
 }
 #merchant-info label, #contact-info label {
+  font-family: "Arial Narrow";
   display:block;
-  font-size:11px;
+  font-size:12px;
 }
 #number-answers li {
   float:left;
@@ -199,8 +200,9 @@ a:hover { color: #fff; background-color:#000; }
 }
 
 #ownership-type-1 p, #ownership-type-2 p, #ownership-type-1 label, #ownership-type-2 label, #ownership-type-1 input, #ownership-type-2 input  {
+  font-family: "Arial Narrow";
   float:left;
-  font-size:11px;
+  font-size:12px;
   margin-top:0;
   margin-bottom:0;
 }
@@ -214,7 +216,7 @@ a:hover { color: #fff; background-color:#000; }
 }
 
 #agreement_ownership_type_input input {
-  height:20px;
+  height:15px;
 }
 
 #dba-name p {
@@ -347,8 +349,9 @@ a:hover { color: #fff; background-color:#000; }
   height:20px;
 }
 #bottom label {
+  font-family: "Arial Narrow";
   display:block;
-  font-size:11px;
+  font-size:12px;
 }
 #submit {
   margin-top:10px;
@@ -361,6 +364,80 @@ a:hover { color: #fff; background-color:#000; }
   padding-left:3px;
 }
 
+#bank-table tr td,#merchant-table tr td {
+  background-color: #eeeeee;
+  font-size:13px;
+  padding-right:3px;
+  padding-left:3px;
+}
+
 .table-top {
   font-weight: bold;
+}
+
+#content {
+  margin-top:20px;
+  margin-left:40px;
+  margin-right:40px;
+}
+
+#new_merchant select {
+  margin-top:5px;
+}
+
+#rules-header {
+  font-family: "Arial Narrow";
+  border-bottom: solid black 2px;
+  height:64px;
+  margin-right:40px;
+}
+
+#rules-header img {
+  float:left;
+}
+#rules-header h1 {
+  color:#666666;
+  padding-top:25px;
+  float:right;
+}
+
+#rules {
+  font-family: "Arial Narrow";
+  text-align: justify;
+  margin-right:40px;
+}
+
+#rules p {
+  font-family: "Arial Narrow";
+  font-size:14px;
+  
+}
+
+#rules ol li {
+  font-family: "Arial Narrow";
+  
+  font-weight: bold;
+}
+
+#rules ol li p {
+  font-family: "Arial Narrow";
+  font-size:15px;
+  margin-top:10px;
+  margin-bottom:5px;
+}
+
+#rules ol li ul {
+  margin-top:0;
+  list-style: disc;
+}
+
+#rules ol li ul li {
+  font-family: "Arial Narrow";
+  font-size:14px;
+  font-weight:normal;
+  margin-bottom:5px;
+}
+
+#signups a {
+  color:#00B0DB;
 }

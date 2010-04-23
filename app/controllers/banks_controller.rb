@@ -1,4 +1,6 @@
 class BanksController < ApplicationController
+  before_filter :authenticate
+
   # GET /banks
   # GET /banks.xml
   def index

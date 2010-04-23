@@ -8,6 +8,14 @@
     $(document).bind('cbox_open', function(){
       $(document).unbind("keydown.cbox_close");
     });
+
+    $("#bank_bank_id").change(function() {
+      var bank_val = $("#bank_bank_id").val();
+      if (bank_val != '') {
+        $("#signups a").attr("href", "/signups/" + bank_val);
+      }
+    });
+
     $("business_type").show();
     if (!$("#errorExplanation").length) {
       $.fn.colorbox({ href:"#business_type",
@@ -40,7 +48,9 @@
         $("#pricing-pic").attr("src","images/grocery_pricing.png");
         $("#type-header-text").text("Application - Grocery");
       }
-      var bank = $("#bank_bank_id").val();
+      var bank = $("#bank_bank_id option:selected").text();
+
+      $("#bank_bank_id").text();
       if (bank == '') {
         $("#bank-name-input").val("My bank is not listed here");
       } else {
@@ -48,8 +58,14 @@
       }
 
       $.fn.colorbox.close();
+      $("#agreement_legal_name").focus();
+
     });
 
+    $("#signups a").click(function () {
+        window.open( this.href, 'Merchants', "width=500,height=300" );
+        return false;
+    });
     $("#agreement_submit").click( function() {
       var type = $("input[name='ownership_type']:checked").val();
       if ($("#agreement_ownership_type").val() == '') {
@@ -92,11 +108,11 @@
         </li>
         <li id="agreement_physical_address_input" class="string required">
           <input type="text" size="35" name="agreement[physical_address]" maxlength="128" id="agreement_physical_address" value="<%=@agreement.physical_address%>"/>
-          <label for="agreement_physical_address">Physical address</label>
+          <label for="agreement_physical_address">Physical address (street)</label>
         </li>
         <li id="agreement_mailing_address_input" class="string required">
           <input type="text" size="35" name="agreement[mailing_address]" maxlength="128" id="agreement_mailing_address" value="<%=@agreement.mailing_address%>"/>
-          <label for="agreement_mailing_address">Mailing address</label>
+          <label for="agreement_mailing_address">Mailing address (if different than physical addres)</label>
         </li>
         <div id="city-state-zip">
           <li id="agreement_city_input" class="string required">
@@ -121,7 +137,7 @@
         </li>
         <li id="agreement_authorized_contact_cell_input" class="string required">
           <input type="text" size="36" name="agreement[authorized_contact_cell]" maxlength="32" id="agreement_authorized_contact_cell" value="<%=@agreement.authorized_contact_cell%>"/>
-          <label for="agreement_authorized_contact_cell">Authorized contact cell</label>
+          <label for="agreement_authorized_contact_cell">Authorized contact cell phone number</label>
         </li>
         <li id="agreement_fax_input" class="string required">
           <input type="text" size="36" name="agreement[fax]" maxlength="32" id="agreement_fax" value="<%=@agreement.fax%>"/>
@@ -154,7 +170,7 @@
             <p><input type="radio" name="ownership_type" value="Other" <%= (@agreement.ownership_type == 'Other')?"checked":""%>/><label>Other (specify)</label></p>
           </div>
           <li id="agreement_ownership_type_input" class="string required">
-            <input type="text" size="3" name="agreement[ownership_type]" maxlength="16" id="agreement_ownership_type" value="<%=@agreement.ownership_type%>"/>
+            <input type="text" size="7" name="agreement[ownership_type]" maxlength="16" id="agreement_ownership_type" value="<%=@agreement.ownership_type%>"/>
           </li>
         </div>
       </div>
@@ -197,7 +213,7 @@
         <img id="bottom-section" src="images/check_lower_left_bottom.png" alt=""/>
         <input type="hidden" value="0" name="agreement[new_account]" value="<%=@agreement.new_account%>"/>
         <div id="little-string">
-          <input type="checkbox" value="1" name="agreement[new_account]" id="agreement_new_account" checked="<%=@agreement.new_account == true%>"/>
+          <input type="checkbox" value="1" name="agreement[new_account]" id="agreement_new_account" <%=(@agreement.new_account == true)?"checked":""%>/>
           <img id="check-box-bottom" src="images/check_bottom_left_right.png" alt=""/>
         </div>
         <img id="bottom-corner" src="images/check_lower_right_bottom.png" alt=""/>
@@ -222,7 +238,9 @@
     <div class="clear"></div>
     <div id="submit">
       <p>
-        <%= f.submit 'Create' %>
+        <label for="agreement_rules">I agree to the Bling Nation merchant <a target="_blank" href="/rules">operating rules</a></label>
+        <input type="hidden" value="0" name="agreement[rules]"/><input type="checkbox" value="1" name="agreement[rules]" id="agreement_rules" />
+        <input type="submit" value="Create" name="commit" id="agreement_submit"/>
       </p>
     </div>
   </div>
@@ -247,16 +265,19 @@
         <div id="business-type">
         <p>What kind of business do you have?</p>
           <select id="business-type-drop-down">
-            <option value="Retail"/>Retail</option>
-            <option value="Restaurant"/>Restaurant</option>
-            <option value="Fuel"/>Fuel</option>
-            <option value="Grocery"/>Grocery</option>
-            <option value="Other"/>Other</option>
+            <option value="Retail">Retail</option>
+            <option value="Restaurant">Restaurant</option>
+            <option value="Fuel">Fuel</option>
+            <option value="Grocery">Grocery</option>
+            <option value="Other">Other</option>
           </select>
         </div>
         <div id="bank">
           <p>Which Community Bank do you bank with?</p>
           <%= collection_select :bank, :bank_id, @banks, :id, :to_s, {:prompt => 'My bank is not listed here'} %>
+        </div>
+        <div id="signups">
+          <p>To see the list of merchants that accept Bling in this community, click <a href='<%=signups_url(@banks[0])%>'>HERE</a></p>
         </div>
       </div>
       <div id="go-button">

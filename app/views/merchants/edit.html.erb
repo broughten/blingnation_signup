@@ -4,12 +4,13 @@
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    This is a merchant for which bank?<br/>
+    <%= f.collection_select :bank_id, @banks, :id, :to_s %>
+
   </p>
   <p>
-    <%= f.label :bank_id %><br />
-    <%= f.text_field :bank_id %>
+    <%= f.label "Merchant name as you would like it to appear:"%><br />
+    <%= f.text_field :name %>
   </p>
   <p>
     <%= f.submit 'Update' %>

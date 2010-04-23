@@ -1,17 +1,9 @@
-<p>
-  <b>Name:</b>
-  <%=h @bank.name %>
-</p>
+<h1>Bank</h1>
+<p>Bank will appear in list as:</p>
 
-<p>
-  <b>City:</b>
-  <%=h @bank.city %>
-</p>
+<p><strong><%=h @bank.name %> - <%=h @bank.city %>, <%=h @bank.state %></strong></p>
 
-<p>
-  <b>State:</b>
-  <%=h @bank.state %>
-</p>
+
 
 
 <%= link_to 'Edit', edit_bank_path(@bank) %> |
