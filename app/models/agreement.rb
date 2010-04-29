@@ -19,5 +19,5 @@ class Agreement < ActiveRecord::Base
   validates_presence_of     :initials
   validates_presence_of     :title
   validates_presence_of     :business_type
-  validates_acceptance_of   :rules, :accept => true
+  #validates_acceptance_of   :rules, :accept => true
 end
